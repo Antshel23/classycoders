@@ -2,7 +2,7 @@ class Employee {
 #salary
 #isHired
 
-constructor(name,title,salary,isHired) {
+constructor(name,title,salary,isHired = true) {
 this.name = name
 this.title = title
 this.#salary = salary
