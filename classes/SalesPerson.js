@@ -3,16 +3,16 @@ const Employee = require('./Employee');
 class SalesPerson extends Employee {
     #totalSales
 
-    constructor(name,title,salary,isHired, clients) {
-        super(name,title,salary,isHired);
+    constructor(name,title,salary, clients) {
+        super(name,title,salary);
         this.#totalSales = 0;
         this.clients = clients
     }
-    getSalesNumbers() {
+    getSalesNumber() {
         return this.#totalSales;
     }
     makeSale(amount) {
-        this.#totalSales = amount
+        this.#totalSales += amount
     }
 }
 
