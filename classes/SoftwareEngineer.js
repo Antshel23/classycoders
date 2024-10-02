@@ -3,8 +3,8 @@ const Employee = require('./Employee');
 class SoftwareEngineer extends Employee {
 #programmingLanguages
 
-constructor(name,title,salary,isHired, programmingLanguages = []) {
-super(name,title,salary,isHired)
+constructor(name,title,salary, programmingLanguages) {
+super(name,title,salary)
 this.#programmingLanguages = programmingLanguages
 }
 
@@ -12,7 +12,7 @@ getProgrammingLanguages() {
     return this.#programmingLanguages
 }
 
-setProgrammingLanguage(language) {
+setProgrammingLanguages(language) {
 this.#programmingLanguages.push(language)
 }
 

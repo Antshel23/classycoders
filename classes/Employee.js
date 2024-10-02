@@ -1,12 +1,15 @@
 class Employee {
 #salary
 #isHired
+static allEmployees = []
 
 constructor(name,title,salary,isHired = true) {
 this.name = name
 this.title = title
 this.#salary = salary
 this.#isHired = isHired
+
+Employee.allEmployees.push(this)
 }
 
 getSalary() {
@@ -29,7 +32,19 @@ setStatus(command) {
         this.#isHired = false
     }
 }
-    
+
+static getEmployees() {
+    return Employee.allEmployees
+}
+
+static getTotalPayroll() {
+    let sum = 0
+    for (let i = 0; i < Employee.allEmployees.length; i++) {
+        sum += Employee.allEmployees[i].getSalary()
+    }
+    return sum
+}
+
 }
 
 module.exports = Employee
